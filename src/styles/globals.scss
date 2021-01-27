@@ -1,0 +1,72 @@
+@import './utils/reset';
+@import './utils/variables';
+
+%column {
+	display: flex;
+	flex-direction: column;
+}
+
+* {box-sizing: border-box;}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	line-height: 1.25;
+	letter-spacing: .5px;
+}
+
+html {
+  height: 100%;
+  
+  body {
+		@extend %column;
+    min-height: 100%;
+		background-color: $light;
+		
+		#__next {
+			@extend %column;
+			flex: 1;
+		}
+  }
+}
+
+a {color: inherit; text-decoration: none;}
+
+/* -== Global classes ==- */
+.layout {
+	padding: {
+		left: 7.5rem;
+		right: 7.5rem;
+	};
+}
+
+.flex {
+	display: flex;
+	
+	&--center {
+		@extend .flex;
+		align-items: center;
+	}
+	&--justify {
+		@extend .flex;
+		&--between {
+			@extend .flex--justify;
+			justify-content: space-between;
+		}
+		&--around {
+			@extend .flex--justify;
+			justify-content: space-around;
+		}
+		&--center {
+			@extend .flex--justify;
+			justify-content: center;
+		}
+	}
+	&--column {
+		@extend .flex;
+		flex-direction: column;
+	}
+}

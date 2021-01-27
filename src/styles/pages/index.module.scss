@@ -1,0 +1,19 @@
+@import '../utils/variables';
+
+#homepage {
+	#hero {
+		height: 100vh;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		
+		.title {
+			font-size: 3.5rem;
+		}
+		
+		div {
+			&:last-child {
+				min-width: 0;
+			}
+		}
+	}
+}

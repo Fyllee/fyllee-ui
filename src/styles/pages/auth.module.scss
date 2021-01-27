@@ -1,0 +1,135 @@
+@import '../utils/variables';
+
+@mixin input($color: color, $shadow: boolean) {
+	width: 100%;
+	padding: .95rem 1.15rem;
+	font-size: .75rem;
+	border: none;
+	border-radius: .65rem;
+	background-color: $color;
+	transition: .3s box-shadow ease-in-out;
+
+	@if $shadow {
+		box-shadow: 0 0 1rem rgba($color, .25);
+
+		&:hover, &:focus {
+			box-shadow: 0 0 1.5rem rgba($color, .65);
+		}
+	}
+	
+}
+
+.auth {
+	margin: auto 0;
+
+	#sign-msg {
+		padding-left: 5rem;
+		
+		.title {
+			font-size: 3.5rem;
+			margin-bottom: 2.5rem;
+		}
+
+		.text {
+			line-height: 1.5;
+			
+			a {
+				font-weight: bold;
+				color: $blue;
+			}
+		}
+	}
+	
+	#sign-form {
+		margin-left: auto;
+		padding: 1rem;
+		width: 300px;
+		
+		.input {
+			&--id {
+				@include input($white, false);
+	
+				font-size: .75rem;
+				margin-bottom: 1rem;
+				
+				&::placeholder {
+					font-weight: 500;
+					opacity: .4;
+				}
+			}
+			
+			&--submit {
+				@include input($blue, true);
+				
+				font-size: .85rem;
+				font-weight: bold;
+				color: $white;
+			}
+		}
+		
+		#password {
+			margin-bottom: 1.5rem;
+
+			.input--id {margin-bottom: .5rem;}
+			.forgotten {
+				font-size: .75rem;
+				font-weight: 200;
+				padding-right: 1rem;
+				text-align: right;
+				color: $grey;
+				
+				a:hover {
+					border-bottom: .5px solid $grey;
+				}
+			}
+		}
+		
+		.continue {
+			font-size: .75rem;
+			color: $grey;
+			margin: 1.5rem 0;
+			font-weight: 200;
+	
+			&::before, &::after {
+				content: '';
+				border-top: 1.25px solid rgba($grey, .25);
+				flex: 1;
+			}
+	
+			&::before {margin-right: 1rem;}
+			&::after {margin-left: 1rem;}
+		}
+		
+		#external {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 1rem;
+			
+			button {
+				border-radius: .5rem;
+				border: 1.25px solid rgba($grey, .25);
+				background-color: transparent;
+				padding: .65rem 1.35rem;
+				transition: .25s all ease-in-out;
+				background-color: $light;
+				
+				svg {
+					display: block;
+					width: 100%;
+					max-height: 25px;
+					transition: .25s filter ease-in-out;
+				}
+				
+				&:hover {
+					background-color: #ffffff;
+					box-shadow: 0 0 2rem rgba(#000000, .1);
+					border-color: #ffffff;
+					
+					svg {
+						filter: drop-shadow(0 0 .65rem rgba(#000000, .35));
+					}
+				}
+			}
+		}
+	}	
+}

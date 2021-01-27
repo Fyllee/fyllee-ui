@@ -1,0 +1,35 @@
+.highlight, .highlight pre {
+	padding: 1rem;
+	margin: .5rem 0;
+	overflow-x: auto;
+	border-radius: .3rem;
+	background-color: #282c34;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1rem;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	hyphens: none;
+
+	&.code-editor {
+		color: #e06c75;
+	
+		.comment {color: #5c6370; font-style: italic}
+		.punctuation {color: #abb2bf;}
+		.keyword {color: #c678dd;}
+		.string {color: #98c379;}
+		.function, .class {color: #61afef;}
+		.variable {color: #e5c07b;}
+		.operator {color: #56b6c2;}
+	}
+	
+	&.code-terminal {
+		color: #fff;
+		
+		.prompt-sign {color: #8095ff;}	
+	}
+}

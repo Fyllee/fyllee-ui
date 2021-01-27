@@ -1,0 +1,63 @@
+@import '../utils/variables';
+
+#header {
+	padding: {
+		top: 1.75rem;
+		bottom: 1.75rem;
+	}
+
+	.menu, .sign {
+		li {
+			margin: 0 1rem;
+
+			&:first-child {margin-left: 0;}
+			&:last-child {margin-right: 0;}
+			a {
+				transition: .1s color ease-in-out;
+				position: relative;
+				&:hover {color: $blue;}
+				
+				&::after {
+					content: '';
+					position: absolute;
+					top: 125%; left: 50%;
+					height: 3px; width: 0;
+					transform: translateX(-50%);
+					transition: .175s width ease-in-out, .1s color ease-out;
+					border-radius: 1rem;
+					background-color: $blue;
+				}
+				
+				&.active {
+					color: $blue;
+					
+					&::after {
+						width: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	.sign {
+		margin-left: auto;
+		
+		li {
+			&:last-child a {
+				color: $dark;
+				font-weight: bold;
+				border-radius: 2rem;
+				padding: .6rem .95rem;
+				box-shadow: 0 0 2.5rem .25rem rgba(#000, .15);
+				background-color: #fff;
+				transition: .2s box-shadow ease-in-out;
+				
+				&.active {color: $blue;}
+				&::after {content: none;}
+				&:hover {
+					box-shadow: 0 0 2.75rem .25rem rgba(#000, .25);
+				}
+			}
+		}
+	}
+}
