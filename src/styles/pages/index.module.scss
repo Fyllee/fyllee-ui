@@ -24,7 +24,7 @@
 			flex-wrap: wrap;
 			
 			li {
-				margin: 1rem;
+				margin: 1rem 1.5rem;
 				svg {
 					display: block;
 					height: 30px;
@@ -36,9 +36,11 @@
 			.button--dark {margin-right: 1rem;}
 			.sign-in, :global(.button--dark) {
 				margin-left: 1rem;
+				user-select: none;
 				
 				svg {
 					margin-left: .5rem;
+					
 					path {
 						transition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
 						&:first-child {opacity: 0;}

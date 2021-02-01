@@ -5,7 +5,7 @@
 	top: 0;
 	z-index: 9999;
 	background-color: $light;
-	border-bottom: 1px solid rgba(#000, .05);
+	border-bottom: 1px solid rgba($dark, .05);
 	user-select: none;
 	
 	.logo {
@@ -24,7 +24,7 @@
 				position: relative;
 				transition: .1s color ease-out;
 				
-				&:hover {color: $blue;}
+				&:hover::after {width: 15px;}
 				&::after {
 					content: '';
 					position: absolute;
@@ -33,11 +33,11 @@
 					transform: translateX(-50%);
 					transition: .175s width ease-in-out;
 					border-radius: 1rem;
-					background-color: $blue;
+					background-color: $dark;
 				}
 				
 				&:global(.active)::after {
-					width: 20px;
+					width: 15px;
 				}
 			}
 		}
@@ -49,6 +49,7 @@
 		li {
 			&:last-child a {
 				display: initial;
+				transition: .1s all ease-in-out;
 
 				&:global(.active) {
 					background-color: $blue;
