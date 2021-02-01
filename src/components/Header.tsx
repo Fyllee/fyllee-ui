@@ -29,7 +29,9 @@ export default function Header(): ReactElement {
 	return (
 		<header id={stl.header} className={cls('layout', 'flex--center')}>
 			<Link href="/">
-				<a><h2 className={stl.logo}>Bild</h2></a>
+				<a>
+					<img className={stl.logo} src="/global/logo.svg" alt="Temporary logo" />
+				</a>
 			</Link>
 			<nav>
 				<ul className={cls('flex--center', stl.menu)}>
