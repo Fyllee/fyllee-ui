@@ -2,18 +2,70 @@
 
 #homepage {
 	#hero {
-		height: 100vh;
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		text-align: center;
+		margin-top: 7.5rem;
 		
-		.title {
-			font-size: 3.5rem;
+		.content {
+			position: relative;
+			
+			.title {
+				margin-bottom: 1rem;
+				font-size: 5rem;
+				
+				.highlight {color: $dark;}
+			}
+			
+			.subtitle {font-size: 1.35rem;}
 		}
 		
-		div {
-			&:last-child {
-				min-width: 0;
+		.frameworks {
+			margin: 3.5rem auto;
+			max-width: 1500px;
+			flex-wrap: wrap;
+			
+			li {
+				margin: 1rem;
+				svg {
+					display: block;
+					height: 30px;
+				}
 			}
 		}
+		
+		.sign-buttons {
+			.button--dark {margin-right: 1rem;}
+			.sign-in, :global(.button--dark) {
+				margin-left: 1rem;
+				
+				svg {
+					margin-left: .5rem;
+					path {
+						transition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+						&:first-child {opacity: 0;}
+					}
+				}
+				
+				&:hover path {
+					&:first-child {opacity: 1;}
+					&:last-child {transform: translateX(3px);}
+				}
+			}
+		}
+	}
+	
+	#demo {
+		margin-top: 5rem;
+		color: $white;
+		// height: 50vh;
+		background-color: #1f1f1f;
+		
+		clip-path: polygon(0 3.5rem, 100% 0, 100% 100%, 0px 100%);
+		padding: {
+			top: 7.5rem;
+			bottom: 4rem;
+			
+		};
+
+		img {width: 100%;}
 	}
 }

@@ -21,6 +21,7 @@
 
 .auth {
 	margin: auto 0;
+	
 
 	#sign-msg {
 		padding-left: 5rem;
@@ -44,6 +45,7 @@
 		margin-left: auto;
 		padding: 1rem;
 		width: 300px;
+		flex: 1 0 300px;
 		
 		.input {
 			&--id {
@@ -51,11 +53,6 @@
 	
 				font-size: .75rem;
 				margin-bottom: 1rem;
-				
-				&::placeholder {
-					font-weight: 500;
-					opacity: .4;
-				}
 			}
 			
 			&--submit {
@@ -116,7 +113,7 @@
 				svg {
 					display: block;
 					width: 100%;
-					max-height: 25px;
+					height: 25px;
 					transition: .25s filter ease-in-out;
 				}
 				

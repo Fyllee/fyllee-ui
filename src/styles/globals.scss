@@ -70,3 +70,31 @@ a {color: inherit; text-decoration: none;}
 		flex-direction: column;
 	}
 }
+
+.button {
+	display: inline-block;
+	border-radius: 2rem;
+	padding: .5rem 1rem;
+	border: 2px solid $dark;
+	transition: .1s all ease-in-out, .15s box-shadow ease-in-out;
+	user-select: none;
+	
+	&:not(.active):hover {
+		background-color: transparent !important;
+		border-color: $dark;
+		color: $dark;
+	}
+	
+	&--dark {
+		@extend .button;
+		color: $light;
+		background-color: $dark;	
+	}
+	
+	&--light {
+		@extend .button;
+		background-color: #e1e1e1;
+		border-color: #e1e1e1;
+		color: #000;
+	}
+}

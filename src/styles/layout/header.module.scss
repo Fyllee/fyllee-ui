@@ -1,39 +1,43 @@
 @import '../utils/variables';
 
 #header {
-	padding: {
-		top: 1.75rem;
-		bottom: 1.75rem;
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+	background-color: $light;
+	border-bottom: 1px solid rgba(#000, .05);
+	user-select: none;
+	
+	.logo {
+		margin: auto 2.5rem auto 0;
+		color: $dark;
 	}
-
+	
 	.menu, .sign {
+		padding: 1.25rem 0;
 		li {
 			margin: 0 1rem;
 
 			&:first-child {margin-left: 0;}
 			&:last-child {margin-right: 0;}
 			a {
-				transition: .1s color ease-in-out;
 				position: relative;
-				&:hover {color: $blue;}
+				transition: .1s color ease-out;
 				
+				&:hover {color: $blue;}
 				&::after {
 					content: '';
 					position: absolute;
 					top: 125%; left: 50%;
 					height: 3px; width: 0;
 					transform: translateX(-50%);
-					transition: .175s width ease-in-out, .1s color ease-out;
+					transition: .175s width ease-in-out;
 					border-radius: 1rem;
 					background-color: $blue;
 				}
 				
-				&.active {
-					color: $blue;
-					
-					&::after {
-						width: 20px;
-					}
+				&:global(.active)::after {
+					width: 20px;
 				}
 			}
 		}
@@ -44,19 +48,15 @@
 		
 		li {
 			&:last-child a {
-				color: $dark;
-				font-weight: bold;
-				border-radius: 2rem;
-				padding: .6rem .95rem;
-				box-shadow: 0 0 2.5rem .25rem rgba(#000, .15);
-				background-color: #fff;
-				transition: .2s box-shadow ease-in-out;
-				
-				&.active {color: $blue;}
-				&::after {content: none;}
-				&:hover {
-					box-shadow: 0 0 2.75rem .25rem rgba(#000, .25);
+				display: initial;
+
+				&:global(.active) {
+					background-color: $blue;
+					border-color: $blue;
+					color: $light;
 				}
+				&::after {content: none;}
+				&:not(:global(.active)):hover {color: $dark;}
 			}
 		}
 	}
