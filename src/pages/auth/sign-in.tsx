@@ -3,9 +3,7 @@ import stl from '../../styles/pages/auth.module.scss';
 import cls from '../../utils/multi-classes';
 import Link from 'next/link';
 
-import Google from '../../assets/networks/google.svg';
-import Apple from '../../assets/networks/apple.svg';
-import Facebook from '../../assets/networks/facebook.svg';
+import { Apple, Facebook, Google } from '../../assets/networks';
 
 export default function SignIn(): ReactElement {
 	return (
@@ -13,7 +11,6 @@ export default function SignIn(): ReactElement {
 			<div id={stl['sign-msg']}>
 				<h1 className={stl.title}>Sign In to<br />Manage images</h1>
 				<p className={stl.text}>If you don't have an account,<br />You can <Link href="/auth/sign-up"><a>sign up here</a></Link>.</p>
-				<h6>Et ici ? Pas de doute</h6>
 			</div>
 			<form id={stl['sign-form']} className="flex--column" autoComplete="off">
 				<input type="text" name="email" className={cls(stl['input--id'])} placeholder="Email" />

@@ -3,9 +3,7 @@ import stl from '../../styles/pages/auth.module.scss';
 import cls from '../../utils/multi-classes';
 import Link from 'next/link';
 
-import Google from '../../assets/networks/google.svg';
-import Apple from '../../assets/networks/apple.svg';
-import Facebook from '../../assets/networks/facebook.svg';
+import { Apple, Facebook, Google } from '../../assets/networks';
 
 export default function SignUp(): ReactElement {
 	return (
