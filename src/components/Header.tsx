@@ -4,42 +4,46 @@ import cls from '../utils/multi-classes';
 import stl from '../styles/layout/header.module.scss';
 import { useRouter } from 'next/router';
 
-interface INavs {
-	title: string,
-	slug: string;
+interface IActiveProps {
+	href: string;
+	content: string;
+	className?: string;
 }
 
-function ActiveLink({ href, content }: { href: string, content: string }) {
+function ActiveLink({ href, content, className }: IActiveProps): ReactElement {
   return (
 		<Link href={href}>
 			{useRouter().pathname === href ? (
-				<a className={stl.active}>{content}</a>
+				<a className={cls('active', className)}>{content}</a>
 			) : (
-				<a>{content}</a>
+				<a className={className}>{content}</a>
 			)}
 		</Link>
 	)
 }
 
 export default function Header(): ReactElement {
-	const nav: INavs[] = [{ title: 'Home', slug: '/' }, { title: 'Contact Us', slug: '/contact' }, { title: 'Help', slug: '/help' }];
-	const sign: INavs[] = [{ title: 'Sign In', slug: '/auth/sign-in' }, { title: 'Sign Up', slug: '/auth/sign-up' }];
+	const nav: IActiveProps[] = [{ content: 'Home', href: '/' }, { content: 'Contact Us', href: '/contact' }, { content: 'Help', href: '/help' }];
+	const sign: IActiveProps[] = [{ content: 'Sign In', href: '/auth/sign-in' }, { content: 'Sign Up', href: '/auth/sign-up', className: 'button--dark' }];
 	
 	return (
 		<header id={stl.header} className={cls('layout', 'flex--center')}>
+			<Link href="/">
+				<a><h2 className={stl.logo}>Bild</h2></a>
+			</Link>
 			<nav>
 				<ul className={cls('flex--center', stl.menu)}>
-					{nav.map(({title, slug}) => (
-						<li key={slug}>
-							<ActiveLink href={slug} content={title} />
+					{nav.map(({href, content}) => (
+						<li key={content}>
+							<ActiveLink href={href} content={content} />
 						</li>
 					))}
 				</ul>
 			</nav>
 			<ul className={cls('flex--center', stl.sign)}>
-				{sign.map(({title, slug}) => (
-					<li key={slug}>
-						<ActiveLink href={slug} content={title} />
+				{sign.map(({href, content, className}) => (
+					<li key={content}>
+						<ActiveLink href={href} content={content} className={className} />
 					</li>
 				))}
 			</ul>
