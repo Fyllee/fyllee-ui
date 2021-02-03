@@ -1,0 +1,73 @@
+.flowchart {
+	width: 300px;
+	
+	.stage {
+		$separation-distance: 4rem;
+		
+		width: 100%;
+		padding: 1rem;
+		border-radius: .5rem;
+		background-color: #e2e6e9;
+		color: #23282c;
+		position: relative;
+		margin-bottom: $separation-distance;
+		
+		&:last-child {margin-bottom: 0;}
+		&.darker {
+			background-color: #23282c;
+			color: #e2e6e9;
+			
+			.subtitle {color: #6e7276;}
+			.dot {
+				background-color: #23282c;
+				&::before {background-color: #565c68;}
+			}
+		}
+
+		.title {
+			margin-bottom: .2rem;
+			font-weight: 500;
+		}
+		.subtitle {
+			font-size: .95rem;
+			color: #565c68;
+		}
+		
+		&:not(:last-child)::before {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 2px;
+			height: $separation-distance;
+			background-color: #565c68;
+		}
+		
+		.dot {
+			position: absolute;
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			background-color: #e2e6e9;
+			z-index: 1;
+			left: 50%;
+			transform: translateX(-50%);
+			
+			&:first-child {top: -10px;}
+			&:last-child {bottom: -10px;}
+			
+			&::before {
+				content: '';
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background-color: #b7c0c7;
+				border-radius: 50%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}
