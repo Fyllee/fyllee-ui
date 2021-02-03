@@ -1,0 +1,70 @@
+@import '../utils/variables';
+
+@keyframes float {
+	from {transform: translateY(0);}
+	to {transform: translateY(-2px);}
+}
+
+.scribble {
+	position: absolute;
+	left: 75%;
+	transform: rotate(3deg) translateX(-50%);
+	color: $red;
+	white-space: nowrap;
+	
+	&.top-right .float {
+		display: flex;
+		flex-direction: row-reverse;
+		transform: rotate(-3deg) translateX(-50%);
+		
+		svg {
+			transform: scaleY(-1) translateY(5%);
+			margin-left: 1rem;
+		}
+	}
+	
+	&.bottom-right .float {
+		display: flex;
+		flex-direction: row-reverse;
+		
+		svg {
+			transform: translateY(-10%);
+			margin-left: 1rem;
+		}
+	}
+	
+	&.bottom-left .float {
+		transform: rotate(-3deg) translateX(-50%);
+		
+		svg {
+			transform: scaleX(-1) translateY(25%);
+			margin-right: 1rem;
+		}
+	}
+	
+	&.top-left .float {
+		transform: rotate(3deg) translateX(-50%);
+		
+		svg {
+			transform: scale(-1, -1) translateY(-25%);
+			margin-right: 1rem;
+		}
+	}
+	
+	.float {
+		animation: 1.5s ease infinite alternate float;
+		
+		svg {
+			stroke-width: 3px;
+			width: 3rem;
+		}
+		
+		span {
+			font: {
+				family: 'Nanum Pen Script', cursive;
+				weight: normal;
+				size: 2rem;
+			}
+		}
+	}
+}
