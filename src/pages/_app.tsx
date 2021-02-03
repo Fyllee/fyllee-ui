@@ -1,8 +1,10 @@
 import { AppProps } from 'next/app';
 import { Fragment } from 'react';
 import Header from '../components/Header';
+
+// Styles
 import '../styles/globals.scss';
-// import '../styles/vendors/highlight.js/one-dark.css';
+import '../styles/components/scribble.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
