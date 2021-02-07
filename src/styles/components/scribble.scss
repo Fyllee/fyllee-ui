@@ -1,21 +1,14 @@
 @import '../utils/variables';
 
-@keyframes float {
-	from {transform: translateY(0);}
-	to {transform: translateY(-2px);}
-}
-
 .scribble {
-	position: absolute;
-	left: 75%;
-	transform: rotate(3deg) translateX(-50%);
-	color: $red;
+	display: inline-block;
 	white-space: nowrap;
+	color: $red;
 	
-	&.top-right .float {
+	&.top-right {
 		display: flex;
 		flex-direction: row-reverse;
-		transform: rotate(-3deg) translateX(-50%);
+		transform: rotate(-3deg);
 		
 		svg {
 			transform: scaleY(-1) translateY(5%);
@@ -23,7 +16,7 @@
 		}
 	}
 	
-	&.bottom-right .float {
+	&.bottom-right {
 		display: flex;
 		flex-direction: row-reverse;
 		
@@ -33,8 +26,8 @@
 		}
 	}
 	
-	&.bottom-left .float {
-		transform: rotate(-3deg) translateX(-50%);
+	&.bottom-left {
+		transform: rotate(-3deg);
 		
 		svg {
 			transform: scaleX(-1) translateY(25%);
@@ -42,29 +35,25 @@
 		}
 	}
 	
-	&.top-left .float {
-		transform: rotate(3deg) translateX(-50%);
+	&.top-left {
+		transform: rotate(3deg);
 		
 		svg {
 			transform: scale(-1, -1) translateY(-25%);
 			margin-right: 1rem;
 		}
 	}
+
+	svg {
+		stroke-width: 3px;
+		width: 3rem;
+	}
 	
-	.float {
-		animation: 1.5s ease infinite alternate float;
-		
-		svg {
-			stroke-width: 3px;
-			width: 3rem;
-		}
-		
-		span {
-			font: {
-				family: 'Nanum Pen Script', cursive;
-				weight: normal;
-				size: 2rem;
-			}
+	span {
+		font: {
+			family: 'Nanum Pen Script', cursive;
+			weight: normal;
+			size: 2rem;
 		}
 	}
 }
