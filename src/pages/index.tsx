@@ -1,26 +1,28 @@
-import * as WhatIsIt from '../assets/index/what-is-it';
-import cls from '../utils/multi-classes';
-import stl from '../styles/pages/index.module.scss';
-import * as Frameworks from '../assets/frameworks';
-import Arrow from '../assets/arrow.svg';
+import { createElement, ReactElement } from 'react';
+import Scribble from '../components/Scribble';
 import Link from 'next/link';
 
-interface IFrameworks {
-  [key: string]: FC;
-}
+// Assets
+import * as WhatIsIt from '../assets/index/what-is-it';
+import * as Frameworks from '../assets/index/frameworks';
+import Arrow from '../assets/arrows/simple.svg';
+
+// Utils and style
+import cls from '../utils/multi-classes';
+import stl from '../styles/pages/index.module.scss';
 
 export default function Index(): ReactElement {
   return (
     <main id={stl.homepage}>
-      <div id={stl.hero} className={'layout'}>
+      <section id={stl.hero} className="layout">
         <div className={stl.content}>
-          <h1 className={stl.title}>Host your<br /><span className={stl.highlight}>static</span> contents</h1>
-          <p className={stl.subtitle}><b>Bild</b> allows you to host your web or application static contents.</p>
+          <h1 className={stl.title}>Host your<br /><span className={stl.highlight}>static</span> content</h1>
+          <p className={stl.subtitle}><b>Bild</b> allows you to host and manage static content for your websites or application.</p>
         </div>
-        <ul className={cls('flex--justify--center flex--center', stl.frameworks)}>
+        <ul className={cls('flex--justify--center', 'flex--center', stl.frameworks)}>
           {Object.keys(Frameworks).map(e => (
             <li key={e}>
-              {createElement((Frameworks as IFrameworks)[e])}
+              {createElement((Frameworks as SVG)[e])}
             </li>
           ))}
         </ul>
@@ -32,6 +34,7 @@ export default function Index(): ReactElement {
             <a className={stl['sign-in']}>Sign In<Arrow /></a>
           </Link>
         </div>
+      </section>
       <section id={stl.whats} className={cls('layout', 'flex--center')}>
         <div className={cls('flex--center', 'flex--justify--center', 'flex--column', stl.side)}>
           <img src="/images/index/what-is-it.png" alt="" />

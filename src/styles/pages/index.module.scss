@@ -1,9 +1,44 @@
 @import '../utils/variables';
 
 #homepage {
+	section {
+		overflow: hidden;
+		padding: {
+			top: 5rem;
+			bottom: 5rem;
+		}
+		
+		.side {
+			flex: 1;
+			
+			&:nth-child(2n) .content {margin-left: 7.5rem;}
+			&:nth-child(2n+1) .content {margin-right: 7.5rem;}
+			
+			.content {
+				
+				.title {
+					font-size: 5rem;
+					margin-bottom: 1.5rem;
+				}
+				
+				.text {
+					font-size: 1.25rem;
+				}
+			}
+		}
+	}
+	
 	#hero {
 		text-align: center;
-		margin-top: 7.5rem;
+		padding: {
+			top: 7.5rem;
+			bottom: 7.5rem;
+		};
+		background: {
+			image: url('/images/index/pattern.png');
+			size: 500px;
+			repeat: repeat;
+		};
 		
 		.content {
 			position: relative;
@@ -55,18 +90,64 @@
 		}
 	}
 	
-	#demo {
-		margin-top: 5rem;
+	#whats {
 		color: $white;
-		// height: 50vh;
 		background-color: #1f1f1f;
-		
-		clip-path: polygon(0 3.5rem, 100% 0, 100% 100%, 0px 100%);
-		padding: {
-			top: 7.5rem;
-			bottom: 4rem;
+		clip-path: polygon(0 4.5rem, 100% 0, 100% 100%, 0px 100%);
+		padding-top: 10rem;
+
+		.side {
+			&:first-child {
+				img {
+					max-width: 750px;
+					max-height: 500px;
+					width: auto;
+				}
+			}
 			
-		};
+			&:last-child {
+				:global(.scribble) {
+					display: block;
+					transform: none;
+					margin-bottom: .5rem;
+					color: $blue;
+				}
+				
+				.text {margin-bottom: 1.5rem}
+				.icons {
+					margin-bottom: 1.5rem;
+					li {
+						margin: 0 .75rem;
+						padding: 1.25rem;
+						background-color: #262626;
+						border-radius: 1.5rem;
+						
+						&:first-child {margin-left: 0;}
+						&:last-child {margin-right: 0;}
+						
+						svg {
+							display: block;
+							width: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	#how {
+		.side {
+			&:last-child {
+				img {
+					width: 125%;
+					max-width: 950px;
+					transform: translateX(20%);
+				}
+			}
+			
+			.text {margin-bottom: 2.5rem;}
+		}
+	}
 
 		img {width: 100%;}
 	}
