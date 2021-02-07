@@ -1,5 +1,5 @@
-import Crop from './crop.svg';
 import Picture from './picture.svg';
+import Crop from './crop.svg';
 import Video from './video.svg';
 
-export { Crop, Picture, Video };
+export { Picture, Crop, Video };
