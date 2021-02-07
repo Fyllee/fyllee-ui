@@ -1,4 +1,4 @@
-import { Children, FunctionComponent, HTMLAttributes, ReactElement } from 'react';
+import { Children, HTMLAttributes, ReactElement } from 'react';
 import cls from '../utils/multi-classes';
 import stl from '../styles/components/flowchart.module.scss';
 
@@ -10,7 +10,7 @@ interface IStage {
 	dark?: boolean;
 }
 
-Stage.displayName = 'HelloWorld'
+Stage.displayName = 'Stage';
 Stage.defaultProps = {
 	start: false,
 	end: false,
@@ -18,7 +18,10 @@ Stage.defaultProps = {
 
 export function Stage(props: IStage): ReactElement {
 	const { title, subtitle, start, end, dark } = props;
-		
+	
+	if (!title || !subtitle)
+		throw new Error('Flowchart stage component require title and subtitle.');
+
 	return (
 		<div className={cls(stl.stage, dark ? stl.darker : null)}>
 			{start && <span className={stl.dot} />}
@@ -29,9 +32,16 @@ export function Stage(props: IStage): ReactElement {
 	)
 };
 
-export function Flowchart(props: HTMLAttributes<HTMLElement>): ReactElement {
+Flowchart.defaultProps = {
+	animated: false,
+}
+
+export function Flowchart(props: HTMLAttributes<HTMLDivElement>): ReactElement {
 	const { children } = props;
 	
+	if (children === undefined)
+		throw new Error('Flowchart component require stage component.');
+
 	Children.forEach(children, c => {
 		if ((c as any).type.displayName !==  Stage.displayName)
 			throw new Error('Flowchart component allow only Stage components.');
