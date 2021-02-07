@@ -1,6 +1,7 @@
 import { Children, HTMLAttributes, ReactElement } from 'react';
 import cls from '../utils/multi-classes';
 import stl from '../styles/components/flowchart.module.scss';
+import getComponentsByType from '../utils/get-components-by-type';
 
 interface IStage {
 	title: string;
@@ -42,20 +43,18 @@ export function Flowchart(props: HTMLAttributes<HTMLDivElement>): ReactElement {
 	if (children === undefined)
 		throw new Error('Flowchart component require stage component.');
 
-	Children.forEach(children, c => {
-		if ((c as any).type.displayName !==  Stage.displayName)
-			throw new Error('Flowchart component allow only Stage components.');
-	});
+	const stages = getComponentsByType(children, Stage);
 	
 	return (
 		<div className={stl.flowchart}>
-			{Children.map((children as ReactElement), (c, i) => {
-				const { title, subtitle, dark } = c.props as IStage;
+			{stages.map((c, i) => {
+				const { title, subtitle, dark } = c.props;
+				
 				const isFirst = i === 0;
 				const isLast = i+1 === Children.count(children);
 				const isDark = dark !== undefined ? dark : (isFirst ? true : false);
 				
-				return <Stage title={title} subtitle={subtitle} start={!isFirst} end={!isLast} dark={isDark} />
+				return <Stage title={title} subtitle={subtitle} start={!isFirst} end={!isLast} dark={isDark} key={i} />
 			})}
 		</div>
 	)
