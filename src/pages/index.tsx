@@ -68,6 +68,19 @@ export default function Index(): ReactElement {
           <img src="/images/index/dashboard.png" alt="" />
         </div>
       </section>
+      <section id={stl.slider} className="layout">
+        <h1 className={stl.title}>Try our dashboard</h1>
+        <Slider>
+          <Tab name="this is">
+            <img src="/images/index/slider/1.jpg" alt="AirPods 1" />
+          </Tab>
+          <Tab name="fucking">
+            <img src="/images/index/slider/2.jpg" alt="AirPods 2" />
+          </Tab>
+          <Tab name="workiiiing">
+            <img src="/images/index/slider/3.jpg" alt="AirPods 3" />
+          </Tab>
+        </Slider>
       </section>
     </main>
   )

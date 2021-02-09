@@ -149,6 +149,14 @@
 		}
 	}
 
-		img {width: 100%;}
+	#slider {
+		color: $white;
+		background-color: $black;
+		
+		.title {
+			font-size: 3rem;
+			font-weight: bold;
+			padding: 0 8rem;
+		}
 	}
 }
