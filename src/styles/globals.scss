@@ -83,15 +83,15 @@ a {color: inherit; text-decoration: none;}
 	
 	&:not(.active):hover {
 		background-color: transparent !important;
-		border-color: $dark;
-		color: $dark;
+		border-color: $black;
+		color: $black;
 	}
 	
-	&--dark {
+	&--blue {
 		@extend .button;
 		color: $light;
-		background-color: $dark;
-		border-color: $dark;
+		background-color: $blue;
+		border-color: $blue;
 	}
 	
 	&--light {

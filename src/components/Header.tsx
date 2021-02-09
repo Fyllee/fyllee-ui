@@ -24,7 +24,7 @@ function ActiveLink({ href, content, className }: IActiveProps): ReactElement {
 
 export default function Header(): ReactElement {
 	const nav: IActiveProps[] = [{ content: 'Home', href: '/' }, { content: 'Contact Us', href: '/contact' }, { content: 'Price', href: '/price' }, { content: 'Help', href: '/help' }];
-	const sign: IActiveProps[] = [{ content: 'Sign In', href: '/auth/sign-in' }, { content: 'Sign Up', href: '/auth/sign-up', className: 'button--dark' }];
+	const sign: IActiveProps[] = [{ content: 'Sign In', href: '/auth/sign-in' }, { content: 'Sign Up', href: '/auth/sign-up', className: 'button--blue' }];
 	
 	return (
 		<header id={stl.header} className={cls('layout', 'flex--center')}>

@@ -5,7 +5,7 @@
 	top: 0;
 	z-index: 9999;
 	background-color: $light;
-	border-bottom: 1px solid rgba($dark, .05);
+	border-bottom: 1px solid rgba($black, .05);
 	user-select: none;
 	
 	.logo {
@@ -34,7 +34,7 @@
 					transform: translateX(-50%);
 					transition: .175s width ease-in-out;
 					border-radius: 1rem;
-					background-color: $dark;
+					background-color: $blue;
 				}
 				
 				&:global(.active)::after {
@@ -52,13 +52,8 @@
 				display: initial;
 				transition: .1s all ease-in-out;
 
-				&:global(.active) {
-					background-color: $blue;
-					border-color: $blue;
-					color: $light;
-				}
 				&::after {content: none;}
-				&:not(:global(.active)):hover {color: $dark;}
+				&:not(:global(.active)):hover {color: $black;}
 			}
 		}
 	}

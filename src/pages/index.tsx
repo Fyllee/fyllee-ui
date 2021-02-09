@@ -1,4 +1,5 @@
 import { createElement, ReactElement } from 'react';
+import { Slider, Tab } from '../components/Slider';
 import Scribble from '../components/Scribble';
 import Link from 'next/link';
 
@@ -28,7 +29,7 @@ export default function Index(): ReactElement {
         </ul>
         <div className={stl['sign-buttons']}>
           <Link href="/auth/sign-up">
-            <a className="button--dark">Sign Up For Free<Arrow /></a>
+            <a className="button--blue">Sign Up For Free<Arrow /></a>
           </Link>
           <Link href="/auth/sign-in">
             <a className={stl['sign-in']}>Sign In<Arrow /></a>
@@ -60,7 +61,7 @@ export default function Index(): ReactElement {
             <h1 className={stl.title}>How it works?</h1>
             <p className={stl.text}>Simply upload your content from your account dashboard, or use the REST API to dynamically upload your static content.<br />By using parameters in your query, you can resize your image, reduce it, apply filters and more!</p>
             <Link href="/auth/sign-up">
-              <a className="button--dark">Start Now, Sign Up</a>
+              <a className="button--blue">Start Now, Sign Up</a>
             </Link>
           </div>
         </div>
