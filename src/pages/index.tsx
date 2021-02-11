@@ -1,5 +1,4 @@
 import { createElement, ReactElement } from 'react';
-import { Slider, Tab } from '../components/Slider';
 import Scribble from '../components/Scribble';
 import Link from 'next/link';
 
@@ -36,7 +35,7 @@ export default function Index(): ReactElement {
           </Link>
         </div>
       </section>
-      <section id={stl.whats} className={cls('layout', 'flex--center')}>
+      <section id={stl.whats} className={cls('layout', 'flex--center', stl.cutted)}>
         <div className={cls('flex--center', 'flex--justify--center', 'flex--column', stl.side)}>
           <img src="/images/index/what-is-it.png" alt="" />
         </div>
@@ -69,19 +68,26 @@ export default function Index(): ReactElement {
           <img src="/images/index/dashboard.png" alt="" />
         </div>
       </section>
-      <section id={stl.slider} className="layout">
-        <h1 className={stl.title}>Try our dashboard</h1>
-        <Slider>
-          <Tab name="this is">
-            <img src="/images/index/slider/1.jpg" alt="AirPods 1" />
-          </Tab>
-          <Tab name="fucking">
-            <img src="/images/index/slider/2.jpg" alt="AirPods 2" />
-          </Tab>
-          <Tab name="workiiiing">
-            <img src="/images/index/slider/3.jpg" alt="AirPods 3" />
-          </Tab>
-        </Slider>
+      <section id={stl.why} className={cls('layout', stl.cutted)}>
+        <h1 className={stl.title}>Why Bild?</h1>
+        <div className={stl.grid}>
+          <div>
+            <h2 className={stl.subtitle}>Simplicity</h2>
+            <p className={stl.text}>We designed Bild as a simple and quick to use solution. All you have to do is upload your image to our servers to access it, and modify it as you wish using parameters.</p>
+          </div>
+          <div>
+            <h2 className={stl.subtitle}>Scalability</h2>
+            <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus.</p>
+          </div>
+          <div>
+            <h2 className={stl.subtitle}>Rapidity</h2>
+            <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus.</p>
+          </div>
+          <div>
+            <h2 className={stl.subtitle}>Lorem</h2>
+            <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus.</p>
+          </div>
+        </div>
       </section>
     </main>
   )

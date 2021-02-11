@@ -8,6 +8,11 @@
 			bottom: 5rem;
 		}
 		
+		&.cutted {
+			padding-top: 9rem;
+			clip-path: polygon(0 3.5rem, 100% 0, 100% 100%, 0px 100%);
+		}
+		
 		.side {
 			flex: 1;
 			
@@ -15,10 +20,10 @@
 			&:nth-child(2n+1) .content {margin-right: 7.5rem;}
 			
 			.content {
-				
 				.title {
 					font-size: 5rem;
 					margin-bottom: 1.5rem;
+					line-height: 1;
 				}
 				
 				.text {
@@ -93,8 +98,6 @@
 	#whats {
 		color: $white;
 		background-color: $black;
-		clip-path: polygon(0 4.5rem, 100% 0, 100% 100%, 0px 100%);
-		padding-top: 10rem;
 
 		.side {
 			&:first-child {
@@ -113,7 +116,11 @@
 					color: $red-2;
 				}
 				
-				.text {margin-bottom: 1.5rem}
+				.text {
+					color: $grey;
+					font-weight: 300;
+					margin-bottom: 1.5rem;
+				}
 				.icons {
 					margin-bottom: 1.5rem;
 					li {
@@ -136,6 +143,11 @@
 	}
 	
 	#how {
+		padding: {
+			top: 7rem;
+			bottom: 7rem;
+		}
+		
 		.side {
 			&:last-child {
 				img {
@@ -149,14 +161,36 @@
 		}
 	}
 
-	#slider {
+	#why {
 		color: $white;
 		background-color: $black;
 		
 		.title {
 			font-size: 3rem;
 			font-weight: bold;
-			padding: 0 8rem;
+			margin-bottom: 2.5rem;
+		}
+		
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 2.5rem;
+			max-width: 1350px;
+			margin: 0 auto;
+			
+			div {
+				.subtitle {
+					margin-bottom: 1rem;
+				}
+				
+				.text {
+					text-align: justify;
+					hyphens: auto;
+					font-size: 1rem;
+					color: $grey;
+					font-weight: 300;
+				}
+			}
 		}
 	}
 }
