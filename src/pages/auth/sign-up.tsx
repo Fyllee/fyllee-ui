@@ -10,7 +10,7 @@ export default function SignUp(): ReactElement {
 		<main className={cls('flex--center', 'layout', stl.auth)}>
 			<div id={stl['sign-msg']}>
 				<h1 className={stl.title}>Sign Up to<br />Manage content</h1>
-				<p className={stl.text}>If you already have an account,<br />You can <Link href="/auth/sign-up"><a>sign in here</a></Link>.</p>
+				<p className={stl.text}>If you already have an account,<br />You can <Link href="/auth/sign-in"><a>sign in here</a></Link>.</p>
 			</div>
 			<form id={stl['sign-form']} className="flex--column" autoComplete="off">
 				<input type="text" name="firstname" className={cls(stl['input--id'])} placeholder="Firstname" />
