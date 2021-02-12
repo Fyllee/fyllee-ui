@@ -25,9 +25,9 @@
 			&:last-child {margin-right: 0;}
 			a {
 				position: relative;
-				transition: .1s color ease-out;
-				
-				&:hover::after {width: 15px;}
+				transition: .1s opacity ease-out;
+				opacity: .75;
+
 				&::after {
 					content: '';
 					position: absolute;
@@ -39,8 +39,12 @@
 					background-color: $blue;
 				}
 				
-				&:global(.active)::after {
-					width: 15px;
+				&:global(.active), &:hover {
+					opacity: 1;
+					
+					&::after {
+						width: 15px;
+					}
 				}
 			}
 		}
@@ -52,6 +56,7 @@
 		li {
 			&:last-child a {
 				display: initial;
+				opacity: 1;
 				transition: .1s all ease-in-out;
 
 				&::after {content: none;}
