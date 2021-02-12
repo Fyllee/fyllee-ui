@@ -1,0 +1,79 @@
+@import '../utils/variables';
+
+#footer {
+	width: 100%;
+	padding: {
+		top: 3.5rem;
+		bottom: 1.5rem;
+	};
+	
+	.brand {
+		margin-right: 5rem;
+		max-width: 250px;
+		text-align: justify;
+		hyphens: auto;
+		
+		&__logo {
+			margin-bottom: 1rem;
+
+			img {
+				width: 135px;
+			}
+		}
+		
+		&__slogan {
+			margin-bottom: 1rem;
+		}
+		
+		&__networks {
+			li {
+				display: inline-block;
+				margin-right: 1rem;
+				
+				&:last-child {margin-right: 0;}
+				
+				svg {
+					display: block;
+					width: 17px;
+					height: 17px;
+				}
+			}
+		}
+	}
+	
+	.links {
+		flex: 1;
+		font-weight: 500;
+		
+		&__list {
+			flex: 1;
+		}
+		
+		&__title {
+			margin-bottom: 1rem;
+			text-transform: uppercase;
+			color: $blue;
+		}
+		
+		ul {
+			li {
+				margin: 1rem 0;
+				font-weight: 500;
+			}
+		}
+	}
+	
+	.mentions {
+		margin-top: 3.5rem;
+		font-size: .85rem;
+		font-weight: 300;
+		
+		&__made {
+			margin: 0 auto;
+			
+			&__heart {
+				color: $red-2;
+			}
+		}
+	}
+}
