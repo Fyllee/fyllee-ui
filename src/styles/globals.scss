@@ -39,6 +39,11 @@ a {color: inherit; text-decoration: none;}
 
 /* -== Global classes ==- */
 .layout {
+	max-width: 2000px;
+	margin: {
+		left: auto;
+		right: auto;
+	};
 	padding: {
 		left: 7.5rem;
 		right: 7.5rem;

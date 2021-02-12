@@ -27,28 +27,30 @@ export default function Header(): ReactElement {
 	const sign: IActiveProps[] = [{ content: 'Sign In', href: '/auth/sign-in' }, { content: 'Sign Up', href: '/auth/sign-up', className: 'button--blue' }];
 	
 	return (
-		<header id={stl.header} className={cls('layout', 'flex--center')}>
-			<Link href="/">
-				<a className={stl.logo}>
-					<img src="/images/global/logo.svg" alt="Temporary logo" />
-				</a>
-			</Link>
-			<nav>
-				<ul className={cls('flex--center', stl.menu)}>
-					{nav.map(({href, content}) => (
+		<header id={stl.header}>
+			<div className="layout flex--center">
+				<Link href="/">
+					<a className={stl.logo}>
+						<img src="/images/global/logo.svg" alt="Temporary logo" />
+					</a>
+				</Link>
+				<nav>
+					<ul className={cls('flex--center', stl.menu)}>
+						{nav.map(({href, content}) => (
+							<li key={content}>
+								<ActiveLink href={href} content={content} />
+							</li>
+						))}
+					</ul>
+				</nav>
+				<ul className={cls('flex--center', stl.sign)}>
+					{sign.map(({href, content, className}) => (
 						<li key={content}>
-							<ActiveLink href={href} content={content} />
+							<ActiveLink href={href} content={content} className={className} />
 						</li>
 					))}
 				</ul>
-			</nav>
-			<ul className={cls('flex--center', stl.sign)}>
-				{sign.map(({href, content, className}) => (
-					<li key={content}>
-						<ActiveLink href={href} content={content} className={className} />
-					</li>
-				))}
-			</ul>
+			</div>
 		</header>
 	)
 }
