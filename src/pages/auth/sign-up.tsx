@@ -7,7 +7,7 @@ import * as Networks from '../../assets/auth/networks';
 
 export default function SignUp(): ReactElement {
 	return (
-		<main className={cls('flex--center', 'layout', stl.auth)}>
+		<main id={stl.auth} className="flex--center layout">
 			<div id={stl['sign-msg']}>
 				<h1 className={stl.title}>Sign Up to<br />Manage content</h1>
 				<p className={stl.text}>If you already have an account,<br />You can <Link href="/auth/sign-in"><a>sign in here</a></Link>.</p>
