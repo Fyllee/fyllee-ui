@@ -10,22 +10,26 @@
 	transition: .3s box-shadow ease-in-out;
 
 	@if $shadow {
-		box-shadow: 0 0 1rem rgba($color, .25);
+		box-shadow: 0 0 1rem rgba($color, .15);
 
 		&:hover, &:focus {
-			box-shadow: 0 0 1.5rem rgba($color, .65);
+			box-shadow: 0 0 1.5rem rgba($color, .35);
 		}
 	}
 	
 }
 
-.auth {
+#auth {
 	width: 100%;
 	margin: {
 		top: auto;
 		bottom: auto;
 	}
-
+	padding: {
+		top: 5rem;
+		bottom: 5rem;
+	};
+	
 	#sign-msg {
 		padding-left: 5rem;
 		
@@ -77,8 +81,10 @@
 				text-align: right;
 				color: $grey;
 				
-				a:hover {
-					border-bottom: .5px solid $grey;
+				
+				a {
+					border-bottom: .5px solid transparent;
+					&:hover {border-color: $grey;}
 				}
 			}
 		}
