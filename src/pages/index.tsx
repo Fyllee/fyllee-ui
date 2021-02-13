@@ -79,19 +79,19 @@ export default function Index(): ReactElement {
           <h1 className={stl.title}>Why Bild?</h1>
           <div className={stl.grid}>
             <div>
-              <h2 className={stl.subtitle}>Simplicity</h2>
-              <p className={stl.text}>We designed Bild as a simple and quick to use solution. All you have to do is upload your image to our servers to access it, and modify it as you wish using parameters.</p>
+              <h2 className={stl.subtitle}>Easy To Use</h2>
+              <p className={stl.text}>We designed Bild as a simple and quick to use solution. All you have to do is upload your image to our servers to access it, and modify it as you wish using parameters. Deleniti iusto modi similique est voluptates consequuntur.</p>
             </div>
             <div>
-              <h2 className={stl.subtitle}>Scalability</h2>
-              <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus.</p>
+              <h2 className={stl.subtitle}>Scalable</h2>
+              <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus. Quia dicta.</p>
             </div>
             <div>
-              <h2 className={stl.subtitle}>Rapidity</h2>
-              <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus.</p>
+              <h2 className={stl.subtitle}>Fast</h2>
+              <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae totam possimus labore, ratione dolorum ipsam dolore et beatae necessitatibus voluptatum eos? Ipsum harum fuga, deleniti autem reiciendis magnam voluptate quis!</p>
             </div>
             <div>
-              <h2 className={stl.subtitle}>Lorem</h2>
+              <h2 className={stl.subtitle}>Secure</h2>
               <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus.</p>
             </div>
           </div>
