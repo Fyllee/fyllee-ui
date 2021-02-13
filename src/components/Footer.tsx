@@ -8,9 +8,9 @@ import stl from '../styles/layout/footer.module.scss';
 
 type TPage = [name: string, route: `/${string}`];
 interface ILinks {
-  Product: TPage[];
-  Account: TPage[];
-  Developers: TPage[];
+	Product: TPage[];
+	Account: TPage[];
+	Developers: TPage[];
 	Company: TPage[];
 }
 
