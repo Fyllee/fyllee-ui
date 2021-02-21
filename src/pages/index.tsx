@@ -80,19 +80,19 @@ export default function Index(): ReactElement {
           <div className={stl.grid}>
             <div>
               <h2 className={stl.subtitle}>Easy To Use</h2>
-              <p className={stl.text}>We designed Bild as a simple and quick to use solution. All you have to do is upload your image to our servers to access it, and modify it as you wish using parameters. Deleniti iusto modi similique est voluptates consequuntur.</p>
+              <p className={stl.text}>We designed Bild as a simple and quick to use solution. All you have to do is upload your image to our servers to access it, and modify it as you wish using parameters. You can use our REST API or directly, our web app, to make it more easier.</p>
             </div>
             <div>
               <h2 className={stl.subtitle}>Scalable</h2>
-              <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus. Quia dicta.</p>
+              <p className={stl.text}>Transform your images as you need and as you want. There is a lot of filters and modifications available to edit your images. Also, we constantly upgrade Bild functionalities, to retain our clients, and to propose them the best service they need.</p>
             </div>
             <div>
               <h2 className={stl.subtitle}>Fast</h2>
-              <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae totam possimus labore, ratione dolorum ipsam dolore et beatae necessitatibus voluptatum eos? Ipsum harum fuga, deleniti autem reiciendis magnam voluptate quis!</p>
+              <p className={stl.text}>Our image processing is very fast. We use the most fastest way to transform and send you back your transformed images. Too, to use Bild, you only have to create your account and an application, and it's very fast!</p>
             </div>
             <div>
               <h2 className={stl.subtitle}>Secure</h2>
-              <p className={stl.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus esse sint modi totam ipsam dolorem repellat autem ipsa hic similique impedit illum porro explicabo magnam aliquid enim dolores, consequuntur natus.</p>
+              <p className={stl.text}>All of your data are completely safe and secure. Your account and your applications are secured with a strong token, to make it safer than we can do.</p>
             </div>
           </div>
         </div>
