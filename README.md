@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bild Web Interface
 
-## Getting Started
+A REST API static content hosting platform.
 
-First, run the development server:
+Bild was born from a problem I was encountering while creating SPAs with NextJS.
+I couldn't dynamically add images to the images folder. So I had no place to store
+my images, and globally, all my static content. From there came the idea to create
+my own static content storage system. Configured according to my needs, and potentially
+those of other developers who were facing the same problem as me.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+You're on the repository of [Bild](https://github.com/mlbonniec/bild) web interface.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<a href="./LICENSE" alt="Contributors">
+    <img src="https://img.shields.io/badge/License-Apache-green" />
+</a>
+<a href="https://github.com/mlbonniec/bild-ui/commit/master" alt="Commits">
+    <img src="https://img.shields.io/github/commit-activity/m/mlbonniec/bild-ui" />
+</a>
+<a href="https://github.com/mlbonniec/bild-ui/commit/master" alt="Last commit">
+    <img src="https://img.shields.io/github/last-commit/mlbonniec/bild-ui/master" />
+</a>
+<a href="https://github.com/mlbonniec/bild-ui/graphs/contributors" alt="Contributors">
+    <img src="https://img.shields.io/github/contributors/mlbonniec/bild-ui" />
+</a>
+<a href="https://github.com/mlbonniec/bild-ui/issues" alt="Issues">
+    <img src="https://img.shields.io/github/issues-raw/mlbonniec/bild-ui" />
+</a>
+<a href="https://github.com/mlbonniec/bild-ui" alt="Github stars">
+    <img src="https://img.shields.io/github/stars/mlbonniec/bild-ui?style=social" />
+</a>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Table of contents
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- [Bild Web Interface](#bild-web-interface)
+	- [Table of contents](#table-of-contents)
+	- [Landing page](#landing-page)
+	- [License](#license)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Landing page
 
-## Learn More
+*Actually, Bild doesn't have a logo, and the name is not the final name. Moreover, images on the following page are not definitive.*
 
-To learn more about Next.js, take a look at the following resources:
+![Bild UI](https://user-images.githubusercontent.com/29955402/108632351-b6fa1780-746e-11eb-80b0-020875630243.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Copyright © 2021 Mathis Le Bonniec. Licensed under the Apache-2.0 license, see [the license](./LICENSE).
