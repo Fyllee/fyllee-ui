@@ -70,7 +70,7 @@ export default function Footer(): ReactElement {
 										{pages.map((e: TPage) => {
 											const [name, route] = e;
 											return (
-												<li>
+												<li key={name}>
 													<Link href={route}>
 														<a>{name}</a>
 													</Link>
@@ -85,7 +85,7 @@ export default function Footer(): ReactElement {
 				</div>
 				<div className={cls('flex--center', stl.mentions)}>
 					<p>&copy; 2021 Bild.</p>
-					<p className={stl.mentions__made}>Made with <span className={stl.mentions__made__heart}>♥</span> from France</p>
+					<p className={stl.mentions__made}>Made with <span className={stl.mentions__made__heart}>♥</span> from France.</p>
 					<p>All rights reserved.</p>
 				</div>
 			</div>
