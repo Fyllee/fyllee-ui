@@ -21,7 +21,11 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/app/*": ["./src/*"],
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -30,5 +34,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

@@ -1,11 +1,12 @@
 import { AppProps } from 'next/app';
-import { Fragment } from 'react';
 import Head from 'next/head';
 import { AuthenticationProvider } from '@/app/contexts/auth';
+import Header from '@/app/components/Header';
+import Footer from '@/app/components/Footer';
 
 // Styles
-import '../styles/globals.scss';
-import '../styles/components/scribble.scss';
+import '@/app/styles/globals.scss';
+import '@/app/styles/components/scribble.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

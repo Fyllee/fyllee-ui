@@ -1,15 +1,13 @@
 import { createElement, ReactElement } from 'react';
-import Scribble from '../components/Scribble';
 import Link from 'next/link';
+import Scribble from '@/app/components/Scribble';
+import cls from '@/app/utils/multi-classes';
 
-// Assets
-import * as WhatIsIt from '../assets/index/what-is-it';
-import * as Frameworks from '../assets/index/frameworks';
-import Arrow from '../assets/arrows/simple.svg';
-
-// Utils and style
-import cls from '../utils/multi-classes';
-import stl from '../styles/pages/index.module.scss';
+// Assets and style
+import stl from '@/app/styles/pages/index.module.scss';
+import Arrow from '@/app/assets/arrows/simple.svg';
+import * as WhatIsIt from '@/app/assets/index/what-is-it';
+import * as Frameworks from '@/app/assets/index/frameworks';
 
 export default function Index(): ReactElement {
   return (
