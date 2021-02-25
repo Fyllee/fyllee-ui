@@ -1,11 +1,13 @@
-import { createElement, ReactElement } from 'react';
-import stl from '../../styles/pages/auth.module.scss';
-import cls from '../../utils/multi-classes';
 import Link from 'next/link';
+import { createElement, ReactElement } from 'react';
+import cls from '@/app/utils/multi-classes';
+import { authenticationFromServerSide } from '@/app/utils/auth/authentication-from-server-side';
 
-import * as Networks from '../../assets/auth/networks';
+// Assets and styles
+import * as Networks from '@/app/assets/auth/networks';
+import stl from '@/app/styles/pages/auth.module.scss';
 
-export default function SignUp(): ReactElement {
+function SignUp(): ReactElement {
 	return (
 		<main id={stl.auth} className="flex--center layout">
 			<div id={stl['sign-msg']}>
@@ -31,3 +33,9 @@ export default function SignUp(): ReactElement {
 		</main>
 	)
 }
+
+export const getServerSideProps = authenticationFromServerSide({
+	shouldBeAuthenticated: false,
+});
+
+export default SignUp;

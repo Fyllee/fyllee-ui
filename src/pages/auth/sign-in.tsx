@@ -1,21 +1,49 @@
-import { createElement, ReactElement } from 'react';
-import stl from '../../styles/pages/auth.module.scss';
-import cls from '../../utils/multi-classes';
+import { AxiosError } from 'axios';
 import Link from 'next/link';
+import { ChangeEvent, createElement, FormEvent, ReactElement, useState } from 'react';
+import cls from '@/app/utils/multi-classes';
+import { useAuthentication } from '@/app/contexts/auth';
+import { authenticationFromServerSide } from '@/app/utils/auth/authentication-from-server-side';
 
-import * as Networks from '../../assets/auth/networks';
+// Assets and styles
+import * as Networks from '@/app/assets/auth/networks';
+import stl from '@/app/styles/pages/auth.module.scss';
 
-export default function SignIn(): ReactElement {
+function SignIn(): ReactElement {	
+	const { login } = useAuthentication();
+	const [inputs, setInputs] = useState<{ email: string, password: string }>({
+		email: 'sample@domain.com',
+		password: 'test123',
+	});
+	
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+		setInputs({
+			...inputs,
+			[e.target.name]: e.target.value,
+		});
+	}
+	
+	const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		
+		try {
+			login({ email: inputs.email, password: inputs.password }, '/app');
+		} catch (e: unknown) {
+			if ((e as AxiosError).response)
+				console.log((e as AxiosError).response?.status);
+		}
+	};
+	
 	return (
 		<main id={stl.auth} className="flex--center layout">
 			<div id={stl['sign-msg']}>
 				<h1 className={stl.title}>Sign In to<br />Manage content</h1>
 				<p className={stl.text}>If you don't have an account,<br />You can <Link href="/auth/sign-up"><a>sign up here</a></Link>.</p>
 			</div>
-			<form id={stl['sign-form']} className="flex--column" autoComplete="off">
-				<input type="text" name="email" className={cls(stl['input--id'])} placeholder="Email" />
+			<form id={stl['sign-form']} className="flex--column" autoComplete="off" onSubmit={handleFormSubmit}>
+				<input type="text" name="email" className={cls(stl['input--id'])} placeholder="Email" value={inputs.email} onChange={handleInputChange}  />
 				<div id={stl.password}>
-					<input type="password" name="password" className={cls(stl['input--id'])} placeholder="Password" />
+					<input type="password" name="password" className={cls(stl['input--id'])} placeholder="Password" value={inputs.password} onChange={handleInputChange} />
 					<p className={stl.forgotten}>
 						<Link href="/auth/reset-password">
 							<a>Forgotten password</a>
@@ -35,3 +63,9 @@ export default function SignIn(): ReactElement {
 		</main>
 	)
 }
+
+export const getServerSideProps = authenticationFromServerSide({
+	shouldBeAuthenticated: false,
+});
+
+export default SignIn;
