@@ -1,7 +1,7 @@
 import type { GetServerSidePropsResult, NextPageContext } from 'next';
 import nookies from 'nookies';
-import type { User } from '@/app/@types';
-import API from '@/app/utils/api';
+import type { User } from '@/@types/index';
+import API from '@/utils/api';
 
 interface AuthenticationFromServerSideOptions {
 	shouldBeAuthenticated: boolean;

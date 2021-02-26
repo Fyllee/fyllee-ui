@@ -42,11 +42,11 @@ const Flowchart: FC = (props: HTMLAttributes<HTMLDivElement>) => {
 	if (!children)
 		throw new Error('Flowchart component require stage component.');
 
-	const stages = getComponentsByType(children, Stage);
+	const stages = getComponentsByType(children, Stage as FC);
 
 	return (
 		<div className={stl.flowchart}>
-			{stages.map((c, i) => {
+			{stages.map((c, i: number) => {
 				const { title, subtitle, dark } = c.props;
 
 				const isFirst = i === 0;
