@@ -1,8 +1,8 @@
-import { ReactElement } from 'react';
 import Link from 'next/link';
-import cls from '../utils/multi-classes';
-import stl from '../styles/layout/header.module.scss';
 import { useRouter } from 'next/router';
+import type { ReactElement } from 'react';
+import stl from '../styles/layout/header.module.scss';
+import cls from '../utils/multi-classes';
 
 interface IActiveProps {
 	href: string;
@@ -19,13 +19,13 @@ function ActiveLink({ href, content, className }: IActiveProps): ReactElement {
 				<a className={className}>{content}</a>
 			)}
 		</Link>
-	)
+	);
 }
 
 export default function Header(): ReactElement {
 	const nav: IActiveProps[] = [{ content: 'Home', href: '/' }, { content: 'Price', href: '/price' }, { content: 'Contact Us', href: '/contact' }, { content: 'Help', href: '/help' }];
 	const sign: IActiveProps[] = [{ content: 'Sign In', href: '/auth/sign-in' }, { content: 'Sign Up', href: '/auth/sign-up', className: 'button--blue' }];
-	
+
 	return (
 		<header id={stl.header}>
 			<div className="layout flex--center">
@@ -36,7 +36,7 @@ export default function Header(): ReactElement {
 				</Link>
 				<nav>
 					<ul className={cls('flex--center', stl.menu)}>
-						{nav.map(({href, content}) => (
+						{nav.map(({ href, content }) => (
 							<li key={content}>
 								<ActiveLink href={href} content={content} />
 							</li>
@@ -44,7 +44,7 @@ export default function Header(): ReactElement {
 					</ul>
 				</nav>
 				<ul className={cls('flex--center', stl.sign)}>
-					{sign.map(({href, content, className}) => (
+					{sign.map(({ href, content, className }) => (
 						<li key={content}>
 							<ActiveLink href={href} content={content} className={className} />
 						</li>
@@ -52,5 +52,5 @@ export default function Header(): ReactElement {
 				</ul>
 			</div>
 		</header>
-	)
+	);
 }

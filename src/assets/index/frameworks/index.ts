@@ -7,4 +7,6 @@ import React from './react.svg';
 import Svelte from './svelte.svg';
 import Vue from './vue.svg';
 
-export { Angular, Ember, Gatsby, Next, Nuxt, React, Svelte, Vue };
+export {
+ Angular, Ember, Gatsby, Next, Nuxt, React, Svelte, Vue,
+};
