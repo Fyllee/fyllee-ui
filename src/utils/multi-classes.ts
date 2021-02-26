@@ -5,8 +5,8 @@
  * @param classes - You classes in strings or in variables
  * @returns A string that contains all classes
  */
-export default function multiClasses(...classes: (string | null | undefined)[]): string {
+export default function multiClasses(...classes: Array<string | null | undefined>): string {
 	const filtered: string[] = classes.filter((e): e is string => typeof e === 'string');
-	
+
 	return filtered.join(' ');
 }

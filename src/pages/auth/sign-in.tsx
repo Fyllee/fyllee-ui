@@ -1,31 +1,33 @@
-import { AxiosError } from 'axios';
+import type { AxiosError } from 'axios';
+import type { NextPage } from 'next';
 import Link from 'next/link';
-import { ChangeEvent, createElement, FormEvent, ReactElement, useState } from 'react';
-import cls from '@/app/utils/multi-classes';
+import type { ChangeEvent, FormEvent } from 'react';
+import { createElement, useState } from 'react';
+import * as Networks from '@/app/assets/auth/networks';
 import { useAuthentication } from '@/app/contexts/auth';
+import stl from '@/app/styles/pages/auth.module.scss';
 import { authenticationFromServerSide } from '@/app/utils/auth/authentication-from-server-side';
 
 // Assets and styles
-import * as Networks from '@/app/assets/auth/networks';
-import stl from '@/app/styles/pages/auth.module.scss';
+import cls from '@/app/utils/multi-classes';
 
-function SignIn(): ReactElement {	
+const SignIn: NextPage = () => {
 	const { login } = useAuthentication();
-	const [inputs, setInputs] = useState<{ email: string, password: string }>({
+	const [inputs, setInputs] = useState<{ email: string; password: string }>({
 		email: 'sample@domain.com',
 		password: 'test123',
 	});
-	
-	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
 		setInputs({
 			...inputs,
 			[e.target.name]: e.target.value,
 		});
-	}
-	
-	const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+	};
+
+	const handleFormSubmit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
-		
+
 		try {
 			login({ email: inputs.email, password: inputs.password }, '/app');
 		} catch (e: unknown) {
@@ -33,7 +35,7 @@ function SignIn(): ReactElement {
 				console.log((e as AxiosError).response?.status);
 		}
 	};
-	
+
 	return (
 		<main id={stl.auth} className="flex--center layout">
 			<div id={stl['sign-msg']}>
@@ -41,7 +43,7 @@ function SignIn(): ReactElement {
 				<p className={stl.text}>If you don't have an account,<br />You can <Link href="/auth/sign-up"><a>sign up here</a></Link>.</p>
 			</div>
 			<form id={stl['sign-form']} className="flex--column" autoComplete="off" onSubmit={handleFormSubmit}>
-				<input type="text" name="email" className={cls(stl['input--id'])} placeholder="Email" value={inputs.email} onChange={handleInputChange}  />
+				<input type="text" name="email" className={cls(stl['input--id'])} placeholder="Email" value={inputs.email} onChange={handleInputChange} />
 				<div id={stl.password}>
 					<input type="password" name="password" className={cls(stl['input--id'])} placeholder="Password" value={inputs.password} onChange={handleInputChange} />
 					<p className={stl.forgotten}>
@@ -61,8 +63,8 @@ function SignIn(): ReactElement {
 				</div>
 			</form>
 		</main>
-	)
-}
+	);
+};
 
 export const getServerSideProps = authenticationFromServerSide({
 	shouldBeAuthenticated: false,

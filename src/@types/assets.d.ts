@@ -1,5 +1,3 @@
 declare module '*.svg';
 
-interface SVG {
-  [key: string]: FunctionComponent;
-}
+type SVG = Record<string, FunctionComponent>;
