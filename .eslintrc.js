@@ -31,6 +31,7 @@ module.exports = {
     'react/no-unescaped-entities': 'off',
     'import/no-cycle': [0, { ignoreExternal: true }],
     'no-restricted-syntax': 'off',
+    '@typescript-eslint/no-unnecessary-type-assertion': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/unbound-method': 'off',
     '@typescript-eslint/no-shadow': 'off',
