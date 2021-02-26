@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactElement } from 'react';
-import ScribbleArrow from '../assets/arrows/scribble.svg';
-import cls from '../utils/multi-classes';
+import ScribbleArrow from '@/assets/arrows/scribble.svg';
+import cls from '@/utils/multi-classes';
 
 interface IScribble extends HTMLAttributes<HTMLDivElement> {
 	content: string;

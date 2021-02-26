@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import { createElement } from 'react';
-import Arrow from '@/app/assets/arrows/simple.svg';
-import * as Frameworks from '@/app/assets/index/frameworks';
-import * as WhatIsIt from '@/app/assets/index/what-is-it';
-import Scribble from '@/app/components/Scribble';
-import stl from '@/app/styles/pages/index.module.scss';
-import cls from '@/app/utils/multi-classes';
+import Arrow from '@/assets/arrows/simple.svg';
+import * as Frameworks from '@/assets/index/frameworks';
+import * as WhatIsIt from '@/assets/index/what-is-it';
+import Scribble from '@/components/Scribble';
+import stl from '@/styles/pages/index.module.scss';
+import cls from '@/utils/multi-classes';
 
 const Index: NextPage = () => (
   <main id={stl.homepage}>

@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import { destroyCookie, setCookie } from 'nookies';
 import type { ReactChild, ReactElement } from 'react';
 import { createContext, useContext, useState } from 'react';
-import type { User } from '@/app/@types';
-import API from '@/app/utils/api';
+import type { User } from '@/@types/index';
+import API from '@/utils/api';
 
 interface Authentication {
 	user: User | null;

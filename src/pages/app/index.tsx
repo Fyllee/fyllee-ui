@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import { useAuthentication } from '../../contexts/auth';
-import { authenticationFromServerSide } from '../../utils/auth/authentication-from-server-side';
+import { useAuthentication } from '@/contexts/auth';
+import authenticationFromServerSide from '@/utils/auth/authentication-from-server-side';
 
 const Index: NextPage = () => {
 	const { user, logout } = useAuthentication();

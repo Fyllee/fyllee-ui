@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import type { FC, HTMLAttributes } from 'react';
 import { Fragment } from 'react';
-import stl from '../styles/components/highlight.module.scss';
-import cls from '../utils/multi-classes';
+import stl from '@/styles/components/highlight.module.scss';
+import cls from '@/utils/multi-classes';
 
 // Global elements
 const Break: FC<{ lines?: number }> = ({ lines }) => <Fragment>{Array.from({ length: lines ?? 1 }).map(_ => '\n')}</Fragment>;

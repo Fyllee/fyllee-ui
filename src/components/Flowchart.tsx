@@ -1,8 +1,8 @@
 import type { FC, HTMLAttributes } from 'react';
 import { Children } from 'react';
-import stl from '../styles/components/flowchart.module.scss';
-import getComponentsByType from '../utils/get-components-by-type';
-import cls from '../utils/multi-classes';
+import stl from '@/styles/components/flowchart.module.scss';
+import getComponentsByType from '@/utils/get-components-by-type';
+import cls from '@/utils/multi-classes';
 
 interface IStage {
 	title: string;

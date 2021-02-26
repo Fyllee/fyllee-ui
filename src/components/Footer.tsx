@@ -4,9 +4,9 @@ import type { FC } from 'react';
 // Assets and style
 import {
  Email, Facebook, Instagram, Twitter,
-} from '../assets/global/networks/index';
-import stl from '../styles/layout/footer.module.scss';
-import cls from '../utils/multi-classes';
+} from '@/assets/global/networks/index';
+import stl from '@/styles/layout/footer.module.scss';
+import cls from '@/utils/multi-classes';
 
 type TPage = [name: string, route: `/${string}`];
 interface ILinks {

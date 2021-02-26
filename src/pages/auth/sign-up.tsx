@@ -1,12 +1,10 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import { createElement } from 'react';
-
-// Assets and styles
-import * as Networks from '@/app/assets/auth/networks';
-import stl from '@/app/styles/pages/auth.module.scss';
-import { authenticationFromServerSide } from '@/app/utils/auth/authentication-from-server-side';
-import cls from '@/app/utils/multi-classes';
+import * as Networks from '@/assets/auth/networks';
+import stl from '@/styles/pages/auth.module.scss';
+import authenticationFromServerSide from '@/utils/auth/authentication-from-server-side';
+import cls from '@/utils/multi-classes';
 
 const SignUp: NextPage = () => (
 	<main id={stl.auth} className="flex--center layout">

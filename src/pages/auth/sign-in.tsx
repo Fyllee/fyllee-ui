@@ -3,13 +3,13 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import type { ChangeEvent, FormEvent } from 'react';
 import { createElement, useState } from 'react';
-import * as Networks from '@/app/assets/auth/networks';
-import { useAuthentication } from '@/app/contexts/auth';
-import stl from '@/app/styles/pages/auth.module.scss';
-import { authenticationFromServerSide } from '@/app/utils/auth/authentication-from-server-side';
+import * as Networks from '@/assets/auth/networks';
+import { useAuthentication } from '@/contexts/auth';
+import stl from '@/styles/pages/auth.module.scss';
+import authenticationFromServerSide from '@/utils/auth/authentication-from-server-side';
 
 // Assets and styles
-import cls from '@/app/utils/multi-classes';
+import cls from '@/utils/multi-classes';
 
 const SignIn: NextPage = () => {
 	const { login } = useAuthentication();

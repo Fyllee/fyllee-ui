@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import type { ReactElement } from 'react';
-import stl from '../styles/layout/header.module.scss';
-import cls from '../utils/multi-classes';
+import stl from '@/styles/layout/header.module.scss';
+import cls from '@/utils/multi-classes';
 
 interface IActiveProps {
 	href: string;
