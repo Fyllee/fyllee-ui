@@ -49,7 +49,7 @@ export default function Header(): ReactElement {
 				<ul className={cls('flex--center', stl.sign)}>
 					{user ? (
 						<li>
-							<ActiveLink href="/app" content="Account" className="button--blue" />
+							<ActiveLink href="/dashboard" content="Dashboard" className="button--blue" />
 						</li>
 					) : sign.map(({ href, content, className }) => (
 						<li key={content}>

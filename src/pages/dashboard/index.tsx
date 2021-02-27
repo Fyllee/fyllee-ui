@@ -15,7 +15,7 @@ const Index: NextPage = () => {
 
 	return (
 		<div>
-			<h1>Hello</h1>
+			<h1>Account</h1>
 			<button onClick={handleClick}>logout</button>
 			{Object.entries(user).map(e => <p key={e[0]}>{e[0]}: {e[1]}</p>)}
 		</div>

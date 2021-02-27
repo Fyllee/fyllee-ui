@@ -25,7 +25,7 @@ const Footer: FC = () => {
 			['Features', '/features'],
 		],
 		Account: [
-			['Dashboard', '/app/dashboard'],
+			['Dashboard', '/dashboard'],
 			['Sign In', '/auth/sign-in'],
 			['Sign Up', '/auth/sign-up'],
 		],

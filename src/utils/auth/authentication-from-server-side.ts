@@ -17,7 +17,7 @@ const authenticationFromServerSide = (options: AuthenticationFromServerSideOptio
 		const { token } = nookies.get(ctx);
 
 		if (!shouldBeAuthenticated && token)
-			return { redirect: { destination: '/app', permanent: false } };
+			return { redirect: { destination: '/dashboard', permanent: false } };
 		else if (shouldBeAuthenticated && !token)
 			return { redirect: { destination: '/auth/sign-in', permanent: false } };
 		else if (!shouldBeAuthenticated && !token)

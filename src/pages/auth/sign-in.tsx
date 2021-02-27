@@ -26,7 +26,7 @@ const SignIn: NextPage = () => {
 	const handleFormSubmit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
 
-		void login(inputs.email, inputs.password, '/app');
+		void login(inputs.email, inputs.password, '/dashboard');
 	};
 
 	return (
