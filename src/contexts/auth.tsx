@@ -7,7 +7,7 @@ import API from '@/utils/api';
 
 interface Authentication {
 	user: User | null;
-	login({ email, password, token }: { email?: string; password?: string; token?: string }, redirect?: string): void;
+	error: number | null;
 	logout(redirect?: string): void;
 }
 
@@ -29,6 +29,7 @@ const AuthenticationContext = createContext<Authentication>(defaultAuthenticatio
 export function AuthenticationProvider(props: Props): ReactElement {
 	const router = useRouter();
 	const [user, setUser] = useState<User | null>(props.user);
+	const [error, setError] = useState<number | null>(null);
 
 	const login = async ({ email, password, token }: Credentials, redirect?: string): Promise<void> => {
 		if (email && password) {
@@ -45,6 +46,9 @@ export function AuthenticationProvider(props: Props): ReactElement {
 
 		if (redirect)
 			void router.push(redirect);
+			const error = unknownError as AxiosError;
+
+			setError(error.response!.status);
 	};
 
 	const logout = (redirect?: string): void => {
@@ -57,7 +61,7 @@ export function AuthenticationProvider(props: Props): ReactElement {
 
 	const { Provider } = AuthenticationContext;
 	return (
-		<Provider value={{ user, login, logout }}>
+			user, error, login, logout,
 			{props.children}
 		</Provider>
 	);

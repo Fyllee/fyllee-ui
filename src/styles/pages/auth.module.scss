@@ -58,7 +58,8 @@
 				@include input($white, false);
 	
 				font-size: .75rem;
-				margin-bottom: 1rem;
+				margin-bottom: .5rem;
+				&:not(:first-child) {margin-top: .5rem}
 			}
 			
 			&--submit {
@@ -67,11 +68,20 @@
 				font-size: .85rem;
 				font-weight: bold;
 				color: $white;
+				margin-top: .5rem;
 			}
 		}
 		
+		.flash {
+			font-size: .75rem;
+			padding-left: 1rem;
+			color: $red-2;
+			margin-bottom: .5rem;
+		}
+		
 		#password {
-			margin-bottom: 1.5rem;
+			margin-bottom: 1rem;
+			margin-top: .5rem;
 
 			.input--id {margin-bottom: .5rem;}
 			.forgotten {
@@ -80,7 +90,6 @@
 				padding-right: 1rem;
 				text-align: right;
 				color: $grey;
-				
 				
 				a {
 					border-bottom: .5px solid transparent;
