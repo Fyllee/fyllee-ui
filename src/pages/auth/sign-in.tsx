@@ -1,4 +1,3 @@
-import type { AxiosError } from 'axios';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import type { ChangeEvent, FormEvent } from 'react';
@@ -8,8 +7,6 @@ import FlashError from '@/components/FlashError';
 import { useAuthentication } from '@/contexts/auth';
 import stl from '@/styles/pages/auth.module.scss';
 import authenticationFromServerSide from '@/utils/auth/authentication-from-server-side';
-
-// Assets and styles
 import cls from '@/utils/multi-classes';
 
 const SignIn: NextPage = () => {
@@ -29,12 +26,7 @@ const SignIn: NextPage = () => {
 	const handleFormSubmit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
 
-		try {
-			login({ email: inputs.email, password: inputs.password }, '/app');
-		} catch (e: unknown) {
-			if ((e as AxiosError).response)
-				console.log((e as AxiosError).response?.status);
-		}
+		void login(inputs.email, inputs.password, '/app');
 	};
 
 	return (

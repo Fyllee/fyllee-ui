@@ -1,25 +1,23 @@
+import type { AxiosError } from 'axios';
 import { useRouter } from 'next/router';
-import { destroyCookie, setCookie } from 'nookies';
+import { destroyCookie, parseCookies, setCookie } from 'nookies';
 import type { ReactChild, ReactElement } from 'react';
-import { createContext, useContext, useState } from 'react';
+import {
+ createContext, useContext, useEffect, useState,
+} from 'react';
 import type { User } from '@/@types/index';
 import API from '@/utils/api';
 
 interface Authentication {
 	user: User | null;
 	error: number | null;
+	login(email: string, password: string, redirect?: string): Promise<void>;
 	logout(redirect?: string): void;
 }
 
 interface Props {
 	user: User | null;
 	children: ReactChild | ReactChild[];
-}
-
-interface Credentials {
-	email?: string;
-	password?: string;
-	token?: string;
 }
 
 const api = new API();
@@ -31,28 +29,37 @@ export function AuthenticationProvider(props: Props): ReactElement {
 	const [user, setUser] = useState<User | null>(props.user);
 	const [error, setError] = useState<number | null>(null);
 
-	const login = async ({ email, password, token }: Credentials, redirect?: string): Promise<void> => {
-		if (email && password) {
-			const { data: { token: _token, user } } = await api.loginUser(email, password);
-			if (!_token)
+	const login = async (email: string, password: string, redirect?: string): Promise<void> => {
+		try {
+			const { data: { token, user } } = await api.loginUser(email, password);
+			if (!token)
 				return;
 
-			setUser({ ...user, _token });
-			setCookie(null, 'token', _token, { sameSite: 'strict', maxAge: 3600 * 24 * 365, path: '/' });
-		} else if (token) {
-			const { data: user } = await api.getUserData(token);
 			setUser({ ...user, token });
-		}
+			setCookie(null, 'token', token, { sameSite: 'strict', path: '/' });
 
-		if (redirect)
-			void router.push(redirect);
+			if (redirect)
+				void router.push(redirect);
+		} catch (unknownError: unknown) {
 			const error = unknownError as AxiosError;
 
 			setError(error.response!.status);
+		}
 	};
 
+	useEffect(() => {
+		void (async function fetchData(): Promise<void> {
+			const { token } = parseCookies();
+			if (!token)
+				return;
+
+			const { data } = await api.getUserData(token);
+			setUser({ ...data, token });
+		}());
+	}, [props.user]);
+
 	const logout = (redirect?: string): void => {
-		destroyCookie(null, 'token');
+		destroyCookie({}, 'token', { path: '/' });
 		setUser(null);
 
 		if (redirect)
@@ -61,7 +68,9 @@ export function AuthenticationProvider(props: Props): ReactElement {
 
 	const { Provider } = AuthenticationContext;
 	return (
+		<Provider value={{
 			user, error, login, logout,
+		}}>
 			{props.children}
 		</Provider>
 	);

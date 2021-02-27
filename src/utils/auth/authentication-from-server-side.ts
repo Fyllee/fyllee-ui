@@ -7,14 +7,13 @@ interface AuthenticationFromServerSideOptions {
 	shouldBeAuthenticated: boolean;
 }
 
-type AuthenticationFromServerSide = GetServerSidePropsResult<Record<string, never> | { user: User }>;
+type AuthenticationFromServerSide = Promise<GetServerSidePropsResult<Record<string, never> | { user: User }>>;
 
 // eslint-disable-next-line max-len
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/explicit-function-return-type
-const authenticationFromServerSide = (options: AuthenticationFromServerSideOptions) => {
+const authenticationFromServerSide = (options: AuthenticationFromServerSideOptions): ((ctx: NextPageContext) => AuthenticationFromServerSide) => {
 	const { shouldBeAuthenticated } = options;
 
-	return async (ctx: NextPageContext): Promise<AuthenticationFromServerSide> => {
+	return async (ctx: NextPageContext): AuthenticationFromServerSide => {
 		const { token } = nookies.get(ctx);
 
 		if (!shouldBeAuthenticated && token)
@@ -28,7 +27,7 @@ const authenticationFromServerSide = (options: AuthenticationFromServerSideOptio
 		try {
 			const { data: user } = await new API().getUserData(token);
 
-			return { props: { user } };
+			return { props: { user: { ...user, token } } };
 		} catch (e: unknown) {
 			console.error('An error has occured while login user', e);
 			nookies.destroy(ctx, 'token');
