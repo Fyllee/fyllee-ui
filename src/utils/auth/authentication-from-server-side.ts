@@ -3,17 +3,18 @@ import nookies from 'nookies';
 import type { User } from '@/@types/index';
 import API from '@/utils/api';
 
-interface AuthenticationFromServerSideOptions {
+export type AuthenticationFromServerSideProps = Record<string, never> | { user: User };
+export type AuthenticationFromServerSide<P> = Promise<GetServerSidePropsResult<P>>;
+export interface AuthenticationFromServerSideOptions {
 	shouldBeAuthenticated: boolean;
 }
 
-type AuthenticationFromServerSide = Promise<GetServerSidePropsResult<Record<string, never> | { user: User }>>;
-
-// eslint-disable-next-line max-len
-const authenticationFromServerSide = (options: AuthenticationFromServerSideOptions): ((ctx: NextPageContext) => AuthenticationFromServerSide) => {
+export default function authenticationFromServerSide(
+	options: AuthenticationFromServerSideOptions,
+): ((ctx: NextPageContext) => AuthenticationFromServerSide<AuthenticationFromServerSideProps>) {
 	const { shouldBeAuthenticated } = options;
 
-	return async (ctx: NextPageContext): AuthenticationFromServerSide => {
+	return async (ctx: NextPageContext): AuthenticationFromServerSide<AuthenticationFromServerSideProps> => {
 		const { token } = nookies.get(ctx);
 
 		if (!shouldBeAuthenticated && token)
@@ -35,6 +36,4 @@ const authenticationFromServerSide = (options: AuthenticationFromServerSideOptio
 			return { redirect: { destination: '/auth/sign-in', permanent: false } };
 		}
 	};
-};
-
-export default authenticationFromServerSide;
+}
