@@ -28,6 +28,14 @@ export default class API {
 		});
 	}
 
+	public async getApplications(token: string): Promise<AxiosResponse> {
+		return await this.requestAPI({
+			method: 'GET',
+			url: '/api/v1/applications',
+			token,
+		});
+	}
+
 	private async requestAPI({
 		url, method, token, data,
 	}: Request): Promise<AxiosResponse> {
