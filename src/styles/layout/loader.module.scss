@@ -1,0 +1,26 @@
+@import '../utils/variables';
+
+#loader {
+	margin: auto;
+	margin-bottom: 0;
+	
+	.title {
+		margin-bottom: .5rem;
+		font-weight: 600;
+	}
+	
+	.loading {
+		height: 0;
+		width: 0;
+		padding: 12px;
+		margin: auto;
+		border: 3px solid #ccc;
+		border-right-color: $red-2;
+		border-radius: 50%;
+		animation: rotate 1s infinite linear;
+	}
+	
+	@keyframes rotate {
+		100% {transform: rotate(360deg);}
+	}
+}
