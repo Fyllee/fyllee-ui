@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import Loader from '@/components/Loader';
 import { useAuthentication } from '@/contexts/auth';
 import authenticationFromServerSide from '@/utils/auth/authentication-from-server-side';
@@ -17,6 +18,11 @@ const Index: NextPage = () => {
 		<div>
 			<h1>Account</h1>
 			<button onClick={handleClick}>logout</button>
+			<Link href="/dashboard/applications">
+				<a>
+					<button>Dashboard / Applications</button>
+				</a>
+			</Link>
 			{Object.entries(user).map(e => <p key={e[0]}>{e[0]}: {e[1]}</p>)}
 		</div>
 	);
