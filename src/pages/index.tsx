@@ -14,8 +14,8 @@ const Index: NextPage = () => (
       <div className="layout">
         <div className={stl.content}>
           <h1 className={stl.title}>Host your<br /><span className={stl.highlight}>static</span> content</h1>
-          <p className={stl.subtitle}><b>Bild</b> allows you to host and
-          manage static content for your websites or application.</p>
+          <p className={stl.subtitle}><b>Fyllee</b> lets you host and
+            manage static content for your websites or application.</p>
         </div>
         <ul className={cls('flex--justify--center', 'flex--center', stl.frameworks)}>
           {Object.keys(Frameworks).map(e => (
@@ -41,10 +41,10 @@ const Index: NextPage = () => (
         </div>
         <div className={stl.side}>
           <div className={stl.content}>
-            <h1 className={stl.title}>What is Bild?</h1>
-            <p className={stl.text}><b>Bild</b> is a service that allows you to host all of
-            your static content for your websites, web and mobile applications etc. Moreover,
-            you can edit your images size to optimize the performance of your services.</p>
+            <h1 className={stl.title}>What is Fyllee?</h1>
+            <p className={stl.text}><b>Fyllee</b> is a service that lets you host your static content for your
+              websites or mobile applications. Many file types are supported —although images receive a first-class
+              support: letting you edit or resize them on the fly through a simple query!</p>
             <ul className={cls('flex--center', stl.icons)}>
               {Object.keys(WhatIsIt).map(e => (
                 <li key={e}>
@@ -61,10 +61,10 @@ const Index: NextPage = () => (
       <div className="layout flex--center">
         <div className={stl.side}>
           <div className={stl.content}>
-            <h1 className={stl.title}>How it works?</h1>
-            <p className={stl.text}>Simply upload your content from your account dashboard, or use
-            the REST API to dynamically upload your static content.<br />By using parameters in your
-            query, you can resize your image, reduce it, apply filters and more!</p>
+            <h1 className={stl.title}>How does it work?</h1>
+            <p className={stl.text}>You can simplfy upload your content from your account dashboard, or use
+              the REST API to dynamically upload your static content.<br />By using parameters in your
+              query, you can resize your image, reduce it, apply filters and more!</p>
             <Link href="/auth/sign-up">
               <a className="button--blue">Start Now, Sign Up</a>
             </Link>
@@ -77,30 +77,31 @@ const Index: NextPage = () => (
     </section>
     <section id={stl.why} className={stl.cutted}>
       <div className="layout">
-        <h1 className={stl.title}>Why Bild?</h1>
+        <h1 className={stl.title}>Why Fyllee?</h1>
         <div className={stl.grid}>
           <div>
             <h2 className={stl.subtitle}>Easy To Use</h2>
-            <p className={stl.text}>We designed Bild as a simple and quick to use solution. All you have to
-            do is upload your image to our servers to access it, and modify it as you wish using parameters.
-            You can use our REST API or directly, our web app, to make it more easier.</p>
+            <p className={stl.text}>We designed Fyllee as a simple and quick-to-use solution. All you have to
+              do is upload your image to our service, and modify it as you wish using query parameters.
+              You can use either our REST API or our web app, if you wish to make it easier.</p>
           </div>
           <div>
             <h2 className={stl.subtitle}>Scalable</h2>
-            <p className={stl.text}>Transform your images as you need and as you want. There is a lot of filters
-            and modifications available to edit your images. Also, we constantly upgrade Bild functionalities, to
-            retain our clients, and to propose them the best service they need.</p>
+            <p className={stl.text}>Transform your images as you need and as you want. There are a lot of filters
+              and modifications available. We constantly upgrade Fyllee's functionalities, to propose our clients
+              the best service they need.</p>
           </div>
           <div>
             <h2 className={stl.subtitle}>Fast</h2>
-            <p className={stl.text}>Our image processing is very fast. We use the most fastest way to transform and
-            send you back your transformed images. Too, to use Bild, you only have to create your account and an
-            application, and it's very fast!</p>
+            <p className={stl.text}>Our API and image-processing process is fast, thanks to the cutting-edge technology
+              we use. Having a fast and reliable service is extremely important for our customer's businesses. This will
+              ensure you are always ahead of your competitors!
+            </p>
           </div>
           <div>
             <h2 className={stl.subtitle}>Secure</h2>
             <p className={stl.text}>All of your data are completely safe and secure. Your account and your applications
-            are secured with a strong token, to make it safer than we can do.</p>
+              are protected with a token, and you can choose to encrypt the uploaded static content.</p>
           </div>
         </div>
       </div>

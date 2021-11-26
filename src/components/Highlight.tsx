@@ -20,13 +20,13 @@ const Tab: FC<{ length?: number }> = ({ length }) => <Fragment>{Array.from({ len
 
 export const Editor: FC = () => (
 	<CodeEditor>
-		<Keyword>import</Keyword> Bild <Keyword>from</Keyword> <String>'bild'</String><Punctuation>;</Punctuation>
+		<Keyword>import</Keyword> Fyllee <Keyword>from</Keyword> <String>'fyllee'</String><Punctuation>;</Punctuation>
 		<Break />
 		<Keyword>import</Keyword> img <Keyword>from</Keyword> <String>'./image.png'</String><Punctuation>;</Punctuation>
 		<Break lines={2} />
-		<Keyword>const</Keyword> <Variable>bild</Variable><Punctuation>:</Punctuation> <Variable>Bild</Variable> <Operator>=</Operator> <Keyword>new</Keyword> <Class>Bild</Class><Punctuation>(</Punctuation><String>'BQokikJOvBi2Hl4olfQ2'</String><Punctuation>)</Punctuation><Punctuation>;</Punctuation>
+		<Keyword>const</Keyword> <Variable>fyllee</Variable><Punctuation>:</Punctuation> <Variable>Fyllee</Variable> <Operator>=</Operator> <Keyword>new</Keyword> <Class>Fyllee</Class><Punctuation>(</Punctuation><String>'BQokikJOvBi2Hl4olfQ2'</String><Punctuation>)</Punctuation><Punctuation>;</Punctuation>
 		<Break lines={2} />
-		<Keyword>await</Keyword> <Variable>bild</Variable><Punctuation>.</Punctuation><Function>upload</Function><Punctuation>(</Punctuation><Punctuation>{'{'}</Punctuation>
+		<Keyword>await</Keyword> <Variable>fyllee</Variable><Punctuation>.</Punctuation><Function>upload</Function><Punctuation>(</Punctuation><Punctuation>{'{'}</Punctuation>
 		<Break />
 		<Tab />image<Punctuation>:</Punctuation> img<Punctuation>,</Punctuation>
 		<Break />

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 // Assets and style
 import {
- Email, Facebook, Instagram, Twitter,
+	Email, Facebook, Instagram, Twitter,
 } from '@/assets/global/networks/index';
 import stl from '@/styles/layout/footer.module.scss';
 import cls from '@/utils/multi-classes';
@@ -17,7 +17,7 @@ interface ILinks {
 }
 
 const Footer: FC = () => {
-	const networks: Array<[FC, string]> = [[Twitter, 'https://twitter.com/bild'], [Instagram, 'https://instagram.com/bild'], [Facebook, 'https://facebook.com/bild'], [Email, 'mailto:contact@bild.com']];
+	const networks: Array<[FC, string]> = [[Twitter, 'https://twitter.com/fyllee'], [Instagram, 'https://instagram.com/fyllee'], [Facebook, 'https://facebook.com/fyllee'], [Email, 'mailto:contact@fyllee.com']];
 	const links: ILinks = {
 		Product: [
 			['Overview', '/overview'],
@@ -52,7 +52,7 @@ const Footer: FC = () => {
 							</a>
 						</Link>
 						<p className={stl.brand__slogan}>
-							<b>Bild</b> allows you to host and manage static content for your websites or application.
+							<b>Fyllee</b> allows you to host and manage static content for your websites or application.
 						</p>
 						<ul className={stl.brand__networks}>
 							{networks.map((e, i) => (
@@ -88,7 +88,7 @@ const Footer: FC = () => {
 					</div>
 				</div>
 				<div className={cls('flex--center', stl.mentions)}>
-					<p>&copy; 2021 Bild.</p>
+					<p>&copy; 2021 Fyllee.</p>
 					<p className={stl.mentions__made}>
 						Made with <span className={stl.mentions__made__heart}>♥</span> from France.
 					</p>
